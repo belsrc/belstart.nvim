@@ -40,5 +40,26 @@ map('n', '<leader>e', vim.diagnostic.open_float, 'Show diagnostic [E]rror messag
 map('n', '<leader>q', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
 
 -- Search
--- I can move Telescope here but I need to figure out the relation
--- between built in func name and :Telescope <command>
+map('n', '<leader>sh', '<cmd>Telescope help_tags<cr>', '[S]earch [H]elp')
+map('n', '<leader>sk', '<cmd>Telescope keymaps<cr>', '[S]earch [K]eymaps')
+map('n', '<leader>sf', '<cmd>Telescope find_files<cr>', '[S]earch [F]iles')
+map('n', '<leader>ss', '<cmd>Telescope builtin<cr>', '[S]earch [S]elect Telescope')
+map('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', '[S]earch current [W]ord')
+map('n', '<leader>sg', '<cmd>Telescope live_grep<cr>', '[S]earch by [G]rep')
+map('n', '<leader>sd', '<cmd>Telescope diagnostics<cr>', '[S]earch [D]iagnostics')
+map('n', '<leader>sr', '<cmd>Telescope resume<cr>', '[S]earch [R]esume')
+map('n', '<leader>s.', '<cmd>Telescope oldfiles<cr>', '[S]earch Recent Files ("." for repeat)')
+map('n', '<leader><leader>', '<cmd>Telescope buffers<cr>', '[ ] Find existing buffers')
+map(
+  'n',
+  '<leader>s/',
+  "<cmd>lua require('telescope.builtin').live_grep({ grep_open_files = true, prompt_title = 'Live Grep in Open Files'})<cr>",
+  '[S]earch [/] in Open Files'
+)
+map(
+  'n',
+  '<leader>/',
+  "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })<cr>",
+  '[/] Fuzzily search in current buffer'
+)
+map('n', '<leader>sn', "<cmd>lua require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }<cr>", '[S]earch [N]eovim files')
