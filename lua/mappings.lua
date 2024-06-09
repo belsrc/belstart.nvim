@@ -27,8 +27,9 @@ map('n', '<C-l>', '<C-w><C-l>', 'Move focus to the right window')
 map('n', '<C-j>', '<C-w><C-j>', 'Move focus to the lower window')
 map('n', '<C-k>', '<C-w><C-k>', 'Move focus to the upper window')
 
--- I need to get nvcheatsheet
--- map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
+-- Sessions
+map('n', '<leader>Sr', '<cmd>SessionRestore<cr>', '[S]ession [R]estore')
+map('n', '<leader>Ss', '<cmd>SessionSave<cr>', '[S]ession [S]ave')
 
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [C]ode [F]ormat')

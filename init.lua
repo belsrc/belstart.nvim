@@ -181,7 +181,7 @@ require('lazy').setup({
 
       -- Set Menu
       dashboard.section.buttons.val = {
-        -- dashboard.button("SPC j", "   Restore Session", "<cmd>SessionRestore<cr>"),
+        dashboard.button('SPC j', '   Restore Session', '<cmd>SessionRestore<cr>'),
         dashboard.button('e', '   New file', '<cmd>ene<CR>'),
         dashboard.button('r', '   Recent', '<cmd>Telescope oldfiles<CR>'),
         dashboard.button('f', '   Find file', '<cmd>Telescope find_files<CR>'),
@@ -479,20 +479,17 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
-        --
-
+        -- biome = {},
+        css_lsp = {},
+        css_variables_language_server = {},
+        cssmodules_language_server = {},
+        eslint_d = {},
+        eslint_lsp = {},
+        glsl_analyzer = {},
+        html_lsp = {},
+        json_lsp = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -507,6 +504,12 @@ require('lazy').setup({
             },
           },
         },
+        markdown_oxide = {},
+        markdownlint = {},
+        prettierd = {},
+        rust_analyzer = {},
+        stylua = {},
+        typescript_language_server = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -572,7 +575,15 @@ require('lazy').setup({
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
+        javascript = { { 'prettierd', 'prettier' }, 'eslintd' },
+        typescript = { { 'prettierd', 'prettier' }, 'eslintd' },
+        javascriptreact = { { 'prettierd', 'prettier' }, 'eslintd' },
+        typescriptreact = { { 'prettierd', 'prettier' }, 'eslintd' },
+        html = { { 'prettierd', 'prettier' } },
+        css = { { 'prettierd', 'prettier' } },
+        json = { { 'prettierd', 'prettier' } },
+        yaml = { { 'prettierd', 'prettier' } },
+        markdown = { { 'prettierd', 'prettier' } },
       },
     },
   },
@@ -788,6 +799,18 @@ require('lazy').setup({
       --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+    end,
+  },
+
+  {
+    'rmagatti/auto-session',
+    config = function()
+      local auto_session = require 'auto-session'
+
+      auto_session.setup {
+        auto_restore_enabled = false,
+        auto_session_suppress_dirs = { '~/' },
+      }
     end,
   },
 
