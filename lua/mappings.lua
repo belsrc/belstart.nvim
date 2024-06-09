@@ -30,7 +30,7 @@ map('n', '<C-k>', '<C-w><C-k>', 'Move focus to the upper window')
 -- I need to get nvcheatsheet
 -- map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 
--- LSP
+-- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [C]ode [F]ormat')
 
 -- Diagnostic keymaps
