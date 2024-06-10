@@ -347,7 +347,7 @@ require('lazy').setup({
           --  See `:help K` for why this keymap.
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
+          -- REMARK: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
@@ -381,6 +381,11 @@ require('lazy').setup({
               end,
             })
           end
+
+          vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
+          vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
+          vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
+          vim.fn.sign_define('DiagnosticSignHint', { text = '󰌵', texthl = 'DiagnosticSignHint' })
 
           -- The following autocommand is used to enable inlay hints in your
           -- code, if the language server you are using supports them
@@ -655,7 +660,7 @@ require('lazy').setup({
       },
       keywords = {
         TODO = { color = 'warning', icon = ' ' },
-        HACK = { color = 'error', icon = ' ' },
+        HACK = { color = 'error', icon = ' ' },
         DEBUG = { color = 'info', icon = ' ', alt = { 'FIX', 'FIXME' } },
         REVIEW = { color = 'info', icon = ' ' },
         NOTE = { color = 'hint', icon = ' ', alt = { 'INFO' } },
