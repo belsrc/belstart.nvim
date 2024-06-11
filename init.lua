@@ -137,6 +137,14 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {
+      theme = 'onedark',
+    },
+  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -446,7 +454,7 @@ require('lazy').setup({
         prettierd = {},
         rust_analyzer = {},
         stylua = {},
-        tsserver = {},
+        -- tsserver = {},
       }
 
       -- Ensure the servers and tools above are installed
