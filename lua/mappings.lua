@@ -16,10 +16,12 @@ map('i', '<C-j>', '<Down>', 'Move Down')
 map('i', '<C-k>', '<Up>', 'Move Up')
 
 -- Buffers
-map('n', '<leader>bn', '<cmd>bnext<CR>', '[B]uffer [N]ext')
-map('n', '<leader>bp', '<cmd>bprevious<CR>', '[B]uffer [P]revious')
-map('n', '<leader>bf', '<cmd>bfirst<CR>', '[B]uffer [F]irst')
-map('n', '<leader>bl', '<cmd>blast<CR>', '[B]uffer [L]ast')
+map('n', '<leader>bn', '<cmd>bnext<cr>', '[B]uffer [N]ext')
+map('n', '<leader>bp', '<cmd>bprevious<cr>', '[B]uffer [P]revious')
+map('n', '<leader>bf', '<cmd>bfirst<cr>', '[B]uffer [F]irst')
+map('n', '<leader>bl', '<cmd>blast<cr>', '[B]uffer [L]ast')
+map('n', '<leader>bd', '<cmd>bd<cr>', '[B]uffer [D]elete')
+map('n', '<leader>bl', '<cmd>ls<cr>', '[B]uffer [L]ist')
 
 -- Windows
 map('n', '<C-h>', '<C-w><C-h>', 'Move focus to the left window')
