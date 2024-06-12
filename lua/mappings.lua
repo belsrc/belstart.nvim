@@ -33,6 +33,9 @@ map('n', '<C-k>', '<C-w><C-k>', 'Move focus to the upper window')
 map('n', '<leader>Sr', '<cmd>SessionRestore<cr>', '[S]ession [R]estore')
 map('n', '<leader>Ss', '<cmd>SessionSave<cr>', '[S]ession [S]ave')
 
+-- Explorer
+map('n', '<leader>pv', vim.cmd.Ex, '[P]roject [V]iew')
+
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [C]ode [F]ormat')
 
