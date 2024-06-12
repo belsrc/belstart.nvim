@@ -61,6 +61,10 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
+      current_line_blame = true,
+      current_line_blame_formatter_opts = {
+        relative_time = true,
+      },
       signs = {
         add = { text = '' },
         change = { text = '' },
@@ -142,6 +146,9 @@ require('lazy').setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       theme = 'onedark',
+      sections = {
+        lualine_c = { { 'filename', path = 1 } },
+      },
     },
   },
 
