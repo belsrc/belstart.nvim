@@ -1,10 +1,11 @@
 local opt = vim.opt
+local global = vim.g
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+global.mapleader = ' '
+global.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
+global.have_nerd_font = true
 
 -- Tabs and Indentation
 opt.expandtab = true
@@ -15,7 +16,10 @@ opt.autoindent = true
 
 -- Make line numbers default
 opt.number = true
--- opt.relativenumber = true
+opt.relativenumber = true
+
+-- Turn off line wrap
+opt.wrap = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 opt.mouse = 'a'
@@ -30,6 +34,7 @@ opt.clipboard = 'unnamedplus'
 opt.breakindent = true
 
 -- Save undo history
+opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -66,5 +71,17 @@ opt.scrolloff = 10
 -- Set highlight on search.
 opt.hlsearch = true
 
+-- Set incremental seach
+opt.incsearch = true
+
+-- Colors
+opt.termguicolors = true
+
+-- Set update time
+opt.updatetime = 100
+
 -- Turn off swapfile
 opt.swapfile = false
+
+-- Turn off backup
+opt.backup = false

@@ -1,5 +1,7 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+-- Some of these were already in kickstart.
+-- Some were ripped from nvchad.
+-- Some were ripped from ThePrimeagen.
+-- Some are me not know wtf nvims normal keybinds are...
 
 local map = function(mode, keys, func, desc)
   vim.keymap.set(mode, keys, func, { desc = desc })
@@ -14,6 +16,14 @@ map('i', '<C-h>', '<Left>', 'Move Left')
 map('i', '<C-l>', '<Right>', 'Move Right')
 map('i', '<C-j>', '<Down>', 'Move Down')
 map('i', '<C-k>', '<Up>', 'Move Up')
+
+-- Highlight Moving. Allows you to move selected text
+map('v', 'J', ":m '>+1<cr>gv=gv")
+map('v', 'K', ":m '<-2<cr>gv=gv")
+
+-- Keep cursor in the middle of screen when half jumping
+map('n', '<C-d>', '<C-d>zz')
+map('n', '<C-u>', '<C-u>zz')
 
 -- Buffers
 map('n', '<leader>bn', '<cmd>bnext<cr>', '[B]uffer [N]ext')
