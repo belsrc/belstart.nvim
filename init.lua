@@ -148,6 +148,9 @@ require('lazy').setup({
       theme = 'onedark',
       sections = {
         lualine_c = { { 'filename', path = 1 } },
+        lualine_x = { 'encoding' },
+        lualine_y = { 'filetype' },
+        lualine_z = { 'location' },
       },
     },
   },
@@ -178,6 +181,7 @@ require('lazy').setup({
         ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
+        ['<leader>e'] = { name = '[E]rror', _ = 'which_key_ignore' },
         ['<leader>p'] = { name = '[P]roject', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
@@ -346,7 +350,7 @@ require('lazy').setup({
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+          map('<leader>cs', require('telescope.builtin').lsp_document_symbols, '[C]ode [S]ymbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
@@ -362,13 +366,13 @@ require('lazy').setup({
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap.
-          map('K', vim.lsp.buf.hover, 'Hover Documentation')
+          map('<leader>H', vim.lsp.buf.hover, '[H]over Documentation')
 
           -- REMARK: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-          map('<C-k>', vim.lsp.buf.signature_help, 'Show [S]ignature')
+          map('<leader>G', vim.lsp.buf.signature_help, 'Show Si[G]nature')
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
@@ -512,7 +516,7 @@ require('lazy').setup({
     lazy = false,
     keys = {
       {
-        '<leader>f',
+        '<leader>F',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
@@ -655,6 +659,12 @@ require('lazy').setup({
   },
 
   {
+    'folke/trouble.nvim',
+    opts = {},
+    keys = {},
+  },
+
+  {
     'olimorris/onedarkpro.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
@@ -785,7 +795,6 @@ require('lazy').setup({
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   require 'kickstart.plugins.neo-tree',
-  vim.keymap.set('n', '<leader>tt', '<cmd>Neotree toggle<cr>', { desc = '[T]oggle Neo[T]ree' }),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

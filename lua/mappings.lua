@@ -52,8 +52,14 @@ map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [C]ode [F]ormat')
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous [D]iagnostic message')
 map('n', ']d', vim.diagnostic.goto_next, 'Go to next [D]iagnostic message')
-map('n', '<leader>e', vim.diagnostic.open_float, 'Show diagnostic [E]rror messages')
-map('n', '<leader>q', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
+map('n', '<leader>ee', vim.diagnostic.open_float, 'Show diagnostic [E]rror messages')
+map('n', '<leader>eq', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
+map('n', '<leader>en', function()
+  require('trouble').next { mode = 'diagnostics', jump = true, skip_groups = true }
+end, 'Trouble: Jump to [n]ext issue')
+map('n', '<leader>ep', function()
+  require('trouble').prev { mode = 'diagnostics', jump = true, skip_groups = true }
+end, 'Trouble: Jump to [p]revious issue')
 
 -- Search
 map('n', '<leader>sh', '<cmd>Telescope help_tags<cr>', '[S]earch [H]elp')
@@ -66,16 +72,12 @@ map('n', '<leader>sd', '<cmd>Telescope diagnostics<cr>', '[S]earch [D]iagnostics
 map('n', '<leader>sr', '<cmd>Telescope resume<cr>', '[S]earch [R]esume')
 map('n', '<leader>s.', '<cmd>Telescope oldfiles<cr>', '[S]earch Recent Files ("." for repeat)')
 map('n', '<leader><leader>', '<cmd>Telescope buffers<cr>', '[ ] Find existing buffers')
-map(
-  'n',
-  '<leader>s/',
-  "<cmd>lua require('telescope.builtin').live_grep({ grep_open_files = true, prompt_title = 'Live Grep in Open Files'})<cr>",
-  '[S]earch [/] in Open Files'
-)
-map(
-  'n',
-  '<leader>/',
-  "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })<cr>",
-  '[/] Fuzzily search in current buffer'
-)
-map('n', '<leader>sn', "<cmd>lua require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }<cr>", '[S]earch [N]eovim files')
+map('n', '<leader>s/', function()
+  require('telescope.builtin').live_grep { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }
+end, '[S]earch [/] in Open Files')
+map('n', '<leader>/', function()
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })
+end, '[/] Fuzzily search in current buffer')
+map('n', '<leader>sn', function()
+  require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
+end, '[S]earch [N]eovim files')
