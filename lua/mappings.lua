@@ -8,7 +8,7 @@ local map = function(mode, keys, func, desc)
 end
 
 -- Clear highlight on search when pressing <Esc> in normal mode
-map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+map('n', '<Esc>', '<cmd>nohlsearch<cr>')
 
 -- Insert Moving
 map('i', '<C-e>', '<End>', 'Move End of Line')

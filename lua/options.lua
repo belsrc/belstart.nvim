@@ -19,7 +19,7 @@ opt.number = true
 opt.relativenumber = true
 
 -- Turn off line wrap
-opt.wrap = false
+-- opt.wrap = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 opt.mouse = 'a'
