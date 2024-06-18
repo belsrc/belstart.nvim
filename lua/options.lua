@@ -7,6 +7,11 @@ global.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 global.have_nerd_font = true
 
+-- Adjust some netrw things
+global.netrw_browse_split = 0
+global.netrw_banner = 0
+global.netrw_winsize = 25
+
 -- Tabs and Indentation
 opt.expandtab = true
 opt.tabstop = 2

@@ -45,6 +45,26 @@ require('lazy').setup({
   --    require('gitsigns').setup({ ... })
 
   {
+    'stevearc/oil.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {
+      -- Still need to configure that keymaps before I use solely
+      default_file_explorer = false,
+      delete_to_trash = true,
+      keymaps = {},
+      use_default_keymaps = false,
+      view_options = {
+        show_hidden = true,
+        natural_order = false,
+        sort = {
+          { 'type', 'asc' },
+          { 'name', 'asc' },
+        },
+      },
+    },
+  },
+
+  {
     'numToStr/Comment.nvim',
     opts = {
       toggler = {
