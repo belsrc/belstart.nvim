@@ -48,6 +48,9 @@ map('n', '<leader>pv', vim.cmd.Ex, '[P]roject [V]iew')
 
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [C]ode [F]ormat')
+map('n', '<leader>cd', function()
+  require('neogen').generate()
+end, '[C]ode [D]oc Comment')
 
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous [D]iagnostic message')
