@@ -12,13 +12,13 @@ without warning.
 
 ### Images
 
-![Title Screen](https://belsrc.github.io/gist-images/terminal/nvim-title-mac)
+![Title Screen](https://belsrc.github.io/gist-images/terminal/nvim-title-mac.png)
 
-![Lualine](https://belsrc.github.io/gist-images/terminal/lua-line-1)
+![Lualine](https://belsrc.github.io/gist-images/terminal/lua-line-1.png)
 
-![Git gutters one](https://belsrc.github.io/gist-images/terminal/git-gutter-1)
-![Git gutters two](https://belsrc.github.io/gist-images/terminal/git-gutter-2)
+![Git gutters one](https://belsrc.github.io/gist-images/terminal/git-gutter-1.png)
+![Git gutters two](https://belsrc.github.io/gist-images/terminal/git-gutter-2.png)
 
-![TODO comments](https://belsrc.github.io/gist-images/terminal/todo-comments)
+![TODO comments](https://belsrc.github.io/gist-images/terminal/todo-comments.png)
 
-![Neovim](https://belsrc.github.io/gist-images/terminal/nvim-full)
+![Neovim](https://belsrc.github.io/gist-images/terminal/nvim-full.png)
