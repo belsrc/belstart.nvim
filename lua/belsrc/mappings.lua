@@ -24,6 +24,7 @@ map('v', 'K', ":m '<-2<cr>gv=gv")
 -- Keep cursor in the middle of screen when half jumping
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
+map('n', 'G', 'Gzz')
 
 -- Buffers
 map('n', '<leader>bn', '<cmd>bnext<cr>', '[B]uffer [N]ext')
