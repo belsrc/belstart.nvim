@@ -85,3 +85,8 @@ end, '[/] Fuzzily search in current buffer')
 map('n', '<leader>sn', function()
   require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
 end, '[S]earch [N]eovim files')
+
+-- Markdown
+map('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', '[M]arkdown Preview')
+map('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', '[M]arkdown Preview [S]top')
+map('n', '<leader>mt', '<cmd>MarkdownPreviewToggle<cr>', '[M]arkdown Preview [T]oggle')
