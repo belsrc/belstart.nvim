@@ -27,12 +27,12 @@ map('n', '<C-u>', '<C-u>zz')
 map('n', 'G', 'Gzz')
 
 -- Buffers
-map('n', '<leader>bn', '<cmd>bnext<cr>', '[B]uffer [N]ext')
-map('n', '<leader>bp', '<cmd>bprevious<cr>', '[B]uffer [P]revious')
-map('n', '<leader>bf', '<cmd>bfirst<cr>', '[B]uffer [F]irst')
-map('n', '<leader>bl', '<cmd>blast<cr>', '[B]uffer [L]ast')
-map('n', '<leader>bd', '<cmd>bd<cr>', '[B]uffer [D]elete')
-map('n', '<leader>bl', '<cmd>ls<cr>', '[B]uffer [L]ist')
+map('n', '<leader>bn', '<cmd>bnext<cr>', '[b]uffer [n]ext')
+map('n', '<leader>bp', '<cmd>bprevious<cr>', '[b]uffer [p]revious')
+map('n', '<leader>bf', '<cmd>bfirst<cr>', '[b]uffer [f]irst')
+map('n', '<leader>bL', '<cmd>blast<cr>', '[b]uffer [L]ast')
+map('n', '<leader>bd', '<cmd>bd<cr>', '[b]uffer [d]elete')
+map('n', '<leader>bl', '<cmd>ls<cr>', '[b]uffer [l]ist')
 
 -- Windows
 map('n', '<C-h>', '<C-w><C-h>', 'Move focus to the left window')
@@ -41,23 +41,23 @@ map('n', '<C-j>', '<C-w><C-j>', 'Move focus to the lower window')
 map('n', '<C-k>', '<C-w><C-k>', 'Move focus to the upper window')
 
 -- Sessions
-map('n', '<leader>Sr', '<cmd>SessionRestore<cr>', '[S]ession [R]estore')
-map('n', '<leader>Ss', '<cmd>SessionSave<cr>', '[S]ession [S]ave')
+map('n', '<leader>Sr', '<cmd>SessionRestore<cr>', '[S]ession [r]estore')
+map('n', '<leader>Ss', '<cmd>SessionSave<cr>', '[S]ession [s]ave')
 
 -- Explorer
-map('n', '<leader>pv', vim.cmd.Ex, '[P]roject [V]iew')
+map('n', '<leader>pv', vim.cmd.Ex, '[p]roject [v]iew')
 
 -- Code
-map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [C]ode [F]ormat')
+map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
 map('n', '<leader>cd', function()
   require('neogen').generate()
-end, '[C]ode [D]oc Comment')
+end, '[c]ode [d]oc Comment')
 
 -- Diagnostic keymaps
-map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous [D]iagnostic message')
-map('n', ']d', vim.diagnostic.goto_next, 'Go to next [D]iagnostic message')
-map('n', '<leader>ee', vim.diagnostic.open_float, 'Show diagnostic [E]rror messages')
-map('n', '<leader>eq', vim.diagnostic.setloclist, 'Open diagnostic [Q]uickfix list')
+map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous [d]iagnostic message')
+map('n', ']d', vim.diagnostic.goto_next, 'Go to next [d]iagnostic message')
+map('n', '<leader>ee', vim.diagnostic.open_float, 'Show diagnostic [e]rror messages')
+map('n', '<leader>eq', vim.diagnostic.setloclist, 'Open diagnostic [q]uickfix list')
 map('n', '<leader>en', function()
   require('trouble').next { mode = 'diagnostics', jump = true, skip_groups = true }
 end, 'Trouble: Jump to [n]ext issue')
@@ -66,27 +66,27 @@ map('n', '<leader>ep', function()
 end, 'Trouble: Jump to [p]revious issue')
 
 -- Search
-map('n', '<leader>sh', '<cmd>Telescope help_tags<cr>', '[S]earch [H]elp')
-map('n', '<leader>sk', '<cmd>Telescope keymaps<cr>', '[S]earch [K]eymaps')
-map('n', '<leader>sf', '<cmd>Telescope find_files<cr>', '[S]earch [F]iles')
-map('n', '<leader>ss', '<cmd>Telescope builtin<cr>', '[S]earch [S]elect Telescope')
-map('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', '[S]earch current [W]ord')
-map('n', '<leader>sg', '<cmd>Telescope live_grep<cr>', '[S]earch by [G]rep')
-map('n', '<leader>sd', '<cmd>Telescope diagnostics<cr>', '[S]earch [D]iagnostics')
-map('n', '<leader>sr', '<cmd>Telescope resume<cr>', '[S]earch [R]esume')
-map('n', '<leader>s.', '<cmd>Telescope oldfiles<cr>', '[S]earch Recent Files ("." for repeat)')
+map('n', '<leader>sh', '<cmd>Telescope help_tags<cr>', '[s]earch [h]elp')
+map('n', '<leader>sk', '<cmd>Telescope keymaps<cr>', '[s]earch [k]eymaps')
+map('n', '<leader>sf', '<cmd>Telescope find_files<cr>', '[s]earch [f]iles')
+map('n', '<leader>ss', '<cmd>Telescope builtin<cr>', '[s]earch [s]elect Telescope')
+map('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', '[s]earch current [w]ord')
+map('n', '<leader>sg', '<cmd>Telescope live_grep<cr>', '[s]earch by [g]rep')
+map('n', '<leader>sd', '<cmd>Telescope diagnostics<cr>', '[s]earch [d]iagnostics')
+map('n', '<leader>sr', '<cmd>Telescope resume<cr>', '[s]earch [r]esume')
+map('n', '<leader>s.', '<cmd>Telescope oldfiles<cr>', '[s]earch Recent Files ("." for repeat)')
 map('n', '<leader><leader>', '<cmd>Telescope buffers<cr>', '[ ] Find existing buffers')
 map('n', '<leader>s/', function()
   require('telescope.builtin').live_grep { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }
-end, '[S]earch [/] in Open Files')
+end, '[s]earch [/] in Open Files')
 map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })
 end, '[/] Fuzzily search in current buffer')
 map('n', '<leader>sn', function()
   require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
-end, '[S]earch [N]eovim files')
+end, '[s]earch [n]eovim files')
 
 -- Markdown
-map('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', '[M]arkdown Preview')
-map('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', '[M]arkdown Preview [S]top')
-map('n', '<leader>mt', '<cmd>MarkdownPreviewToggle<cr>', '[M]arkdown Preview [T]oggle')
+map('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', '[m]arkdown [p]review')
+map('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', '[m]arkdown Preview [s]top')
+map('n', '<leader>mt', '<cmd>MarkdownPreviewToggle<cr>', '[m]arkdown Preview [t]oggle')
