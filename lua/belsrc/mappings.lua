@@ -87,6 +87,9 @@ map('n', '<leader>sn', function()
 end, '[s]earch [n]eovim files')
 
 -- Markdown
-map('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', '[m]arkdown [p]review')
-map('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', '[m]arkdown Preview [s]top')
-map('n', '<leader>mt', '<cmd>MarkdownPreviewToggle<cr>', '[m]arkdown Preview [t]oggle')
+map('n', '<leader>ml', '<cmd>MarkdownPreview<cr>', '[m]arkdown [l]ive preview')
+map('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', '[m]arkdown preview [s]top')
+map('n', '<leader>mL', '<cmd>MarkdownPreviewToggle<cr>', '[m]arkdown [L]ive preview toggle')
+map('n', '<leader>mp', '<cmd>RenderMarkdown enable', '[m]arkdown [p]review')
+map('n', '<leader>md', '<cmd>RenderMarkdown disable', '[m]arkdown [d]isable preview')
+map('n', '<leader>mt', '<cmd>RenderMarkdown toggle', '[m]arkdown [t]oggle preview')

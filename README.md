@@ -10,7 +10,7 @@ things that would make sense in my head. Usuaully some sort of mnemonic.
 As it has been fun customizing this, it is likely to change frequently and
 without warning.
 
-### Images
+## Images
 
 ![Title Screen](https://belsrc.github.io/gist-images/terminal/nvim-title-mac.png)
 
