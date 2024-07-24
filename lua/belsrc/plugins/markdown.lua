@@ -9,20 +9,10 @@ return {
       icons = { '󰲡 ', '󰲣 ', '󰲥 ', '󰲧 ', '󰲩 ', '󰲫 ' },
       signs = { '󰫎 ' },
       backgrounds = {
-        'RenderMarkdownH1Bg',
-        'RenderMarkdownH2Bg',
-        'RenderMarkdownH3Bg',
-        'RenderMarkdownH4Bg',
-        'RenderMarkdownH5Bg',
-        'RenderMarkdownH6Bg',
+        'RenderMarkdownCode',
       },
       foregrounds = {
-        'RenderMarkdownH1',
-        'RenderMarkdownH2',
-        'RenderMarkdownH3',
-        'RenderMarkdownH4',
-        'RenderMarkdownH5',
-        'RenderMarkdownH6',
+        'RenderMarkdownSuccess',
       },
     },
     callout = {
