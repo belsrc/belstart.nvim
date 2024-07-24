@@ -12,6 +12,7 @@ return {
       'javascript',
       'jsdoc',
       'json',
+      'latex',
       'lua',
       'luadoc',
       'markdown',
