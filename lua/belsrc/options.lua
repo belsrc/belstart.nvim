@@ -90,3 +90,9 @@ opt.swapfile = false
 
 -- Turn off backup
 opt.backup = false
+
+-- Options needed for UFO folding
+opt.foldcolumn = '1'
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true

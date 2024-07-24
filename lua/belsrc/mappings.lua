@@ -49,6 +49,7 @@ map('n', '<leader>pv', vim.cmd.Ex, '[p]roject [v]iew')
 
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
+
 map('n', '<leader>cd', function()
   require('neogen').generate()
 end, '[c]ode [d]oc Comment')
@@ -58,9 +59,11 @@ map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous [d]iagnostic message')
 map('n', ']d', vim.diagnostic.goto_next, 'Go to next [d]iagnostic message')
 map('n', '<leader>ee', vim.diagnostic.open_float, 'Show diagnostic [e]rror messages')
 map('n', '<leader>eq', vim.diagnostic.setloclist, 'Open diagnostic [q]uickfix list')
+
 map('n', '<leader>en', function()
   require('trouble').next { mode = 'diagnostics', jump = true, skip_groups = true }
 end, 'Trouble: Jump to [n]ext issue')
+
 map('n', '<leader>ep', function()
   require('trouble').prev { mode = 'diagnostics', jump = true, skip_groups = true }
 end, 'Trouble: Jump to [p]revious issue')
@@ -76,12 +79,15 @@ map('n', '<leader>sd', '<cmd>Telescope diagnostics<cr>', '[s]earch [d]iagnostics
 map('n', '<leader>sr', '<cmd>Telescope resume<cr>', '[s]earch [r]esume')
 map('n', '<leader>s.', '<cmd>Telescope oldfiles<cr>', '[s]earch Recent Files ("." for repeat)')
 map('n', '<leader><leader>', '<cmd>Telescope buffers<cr>', '[ ] Find existing buffers')
+
 map('n', '<leader>s/', function()
   require('telescope.builtin').live_grep { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }
 end, '[s]earch [/] in Open Files')
+
 map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })
 end, '[/] Fuzzily search in current buffer')
+
 map('n', '<leader>sn', function()
   require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
 end, '[s]earch [n]eovim files')
@@ -93,3 +99,32 @@ map('n', '<leader>mL', '<cmd>MarkdownPreviewToggle<cr>', '[m]arkdown [L]ive prev
 map('n', '<leader>mp', '<cmd>RenderMarkdown enable', '[m]arkdown [p]review')
 map('n', '<leader>md', '<cmd>RenderMarkdown disable', '[m]arkdown [d]isable preview')
 map('n', '<leader>mt', '<cmd>RenderMarkdown toggle', '[m]arkdown [t]oggle preview')
+
+-- Folding
+map('n', '<leader>fc', function()
+  require('ufo').closeAllFolds()
+end, '[f]old [c]lose all')
+
+map('n', '<leader>fo', function()
+  require('ufo').openAllFolds()
+end, '[f]old [o]pen all')
+
+map('n', '<leader>fp', function()
+  require('ufo').peekFoldedLinesUnderCursor()
+end, '[f]old [p]eek')
+
+map('n', '<leader>f1', function()
+  require('ufo').closeFoldsWith(1)
+end, '[f]old level [1]')
+
+map('n', '<leader>f2', function()
+  require('ufo').closeFoldsWith(2)
+end, '[f]old level [2]')
+
+map('n', '<leader>f3', function()
+  require('ufo').closeFoldsWith(3)
+end, '[f]old level [3]')
+
+map('n', '<leader>f4', function()
+  require('ufo').closeFoldsWith(4)
+end, '[f]old level [4]')
