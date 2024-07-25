@@ -6,7 +6,7 @@ return {
     heading = {
       enabled = true,
       sign = true,
-      icons = { '󰲡 ', '󰲣 ', '󰲥 ', '󰲧 ', '󰲩 ', '󰲫 ' },
+      icons = { '󰉫 ', '󰉬 ', '󰉭 ', '󰉮 ', '󰉯 ', '󰉰 ' },
       signs = { '󰫎 ' },
       backgrounds = {
         'RenderMarkdownCode',
