@@ -34,6 +34,7 @@ map('n', '<leader>bL', '<cmd>blast<cr>', '[b]uffer [L]ast')
 map('n', '<leader>bd', '<cmd>bd<cr>', '[b]uffer [d]elete')
 map('n', '<leader>bl', '<cmd>ls<cr>', '[b]uffer [l]ist')
 map('n', '<leader>bn', '<cmd>enew<cr>', '[b]uffer [n]ew')
+map('n', '<leader>bw', '<cmd>bwipeout!<cr>', '[b]uffer [w]ipeout')
 
 -- Windows
 map('n', '<C-h>', '<C-w><C-h>', 'Move focus to the left window')
