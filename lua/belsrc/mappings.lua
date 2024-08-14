@@ -51,6 +51,8 @@ map('n', '<leader>pv', vim.cmd.Ex, '[p]roject [v]iew')
 
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
+map('n', '<leader>cr', vim.lsp.buf.rename, 'LSP: [c]ode [r]ename')
+map('n', '<leader>cw', vim.lsp.buf.rename, 'LSP: [c]ode [w]orkspace rename')
 
 map('n', '<leader>cd', function()
   require('neogen').generate()
