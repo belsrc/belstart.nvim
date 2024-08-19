@@ -48,6 +48,7 @@ map('n', '<leader>Ss', '<cmd>SessionSave<cr>', '[S]ession [s]ave')
 
 -- Explorer
 map('n', '<leader>pv', vim.cmd.Ex, '[p]roject [v]iew')
+map('n', '<leader>po', '<cmd>Oil<cr>', '[p]roject [o]il view')
 
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
