@@ -17,6 +17,9 @@ return {
           ['\\'] = 'close_window',
         },
       },
+      filtered_items = {
+        visible = true,
+      },
     },
   },
 }
