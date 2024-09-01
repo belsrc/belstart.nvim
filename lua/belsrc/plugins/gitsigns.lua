@@ -2,9 +2,10 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     opts = {
-      current_line_blame = true,
+      current_line_blame = false,
       current_line_blame_opts = {
         delay = 500,
+        virt_text_priority = 100,
       },
       signs = {
         add = { text = '' },

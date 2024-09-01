@@ -53,7 +53,7 @@ map('n', '<leader>po', '<cmd>Oil<cr>', '[p]roject [o]il view')
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
 map('n', '<leader>cr', vim.lsp.buf.rename, 'LSP: [c]ode [r]ename')
-map('n', '<leader>cR', vim.lsp.buf.rename, 'LSP: [c]ode [R]name workspace')
+map('n', '<leader>cB', '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Git: [c]ode toggle [B]lame')
 
 map('n', '<leader>cd', function()
   require('neogen').generate()

@@ -96,3 +96,6 @@ opt.foldcolumn = '1'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
+
+-- Turn off virtual text, needs to be off for tiny inline diag
+vim.diagnostic.config { virtual_text = false }
