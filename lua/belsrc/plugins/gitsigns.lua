@@ -64,8 +64,6 @@ return {
         -- end, { desc = 'git [D]iff against last commit' })
         --
         -- Toggles
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[t]oggle Git Show [b]lame Line' })
-        map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[t]oggle Git Show [D]eleted' })
       end,
     },
   },

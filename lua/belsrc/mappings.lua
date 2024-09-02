@@ -53,11 +53,14 @@ map('n', '<leader>po', '<cmd>Oil<cr>', '[p]roject [o]il view')
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
 map('n', '<leader>cr', vim.lsp.buf.rename, 'LSP: [c]ode [r]ename')
-map('n', '<leader>cB', '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Git: [c]ode toggle [B]lame')
 
 map('n', '<leader>cd', function()
   require('neogen').generate()
 end, '[c]ode [d]oc Comment')
+
+-- Git
+map('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Git: [b]lame (toggle)')
+map('n', '<leader>gD', '<cmd>Gitsigns toggle_deleted<cr>', 'Git: [D]eleted (toggle)')
 
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous [d]iagnostic message')
