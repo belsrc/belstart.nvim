@@ -4,7 +4,7 @@ return {
     opts = {
       current_line_blame = false,
       current_line_blame_opts = {
-        delay = 500,
+        delay = 200,
         virt_text_priority = 100,
       },
       signs = {
