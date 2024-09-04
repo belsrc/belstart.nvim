@@ -50,6 +50,10 @@ map('n', '<leader>Ss', '<cmd>SessionSave<cr>', '[S]ession [s]ave')
 map('n', '<leader>pv', vim.cmd.Ex, '[p]roject [v]iew')
 map('n', '<leader>po', '<cmd>Oil<cr>', '[p]roject [o]il view')
 
+-- Restarts
+map('n', '<leader>rl', '<cmd>LspRestart<cr>', 'Restart: [l]sp')
+map('n', '<leader>rc', '<cmd>source %MYVIMRC<cr>', 'Restart: nvim [c]config')
+
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
 map('n', '<leader>cr', vim.lsp.buf.rename, 'LSP: [c]ode [r]ename')
