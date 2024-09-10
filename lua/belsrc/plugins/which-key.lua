@@ -20,6 +20,7 @@ return {
       { '<leader>s', group = ' [s]earch' },
       { '<leader>S', group = '[S]ession' },
       { '<leader>t', group = ' [t]oggle' },
+      { '<leader>w', group = ' [w]rap' },
     }
   end,
 }

@@ -21,6 +21,12 @@ map('i', '<C-k>', '<Up>', 'Move Up')
 map('v', 'J', ":m '>+1<cr>gv=gv")
 map('v', 'K', ":m '<-2<cr>gv=gv")
 
+-- Wrapping selection
+map('v', '<leader>w{', 'c{}<esc>P')
+map('v', '<leader>w[', 'c[]<esc>P')
+map('v', '<leader>w(', 'c()<esc>P')
+map('v', "<leader>w'", "c''<esc>P")
+
 -- Keep cursor in the middle of screen when half jumping
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
