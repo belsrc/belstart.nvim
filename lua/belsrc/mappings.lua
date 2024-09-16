@@ -22,6 +22,10 @@ map('v', 'J', ":m '>+1<cr>gv=gv")
 map('v', 'K', ":m '<-2<cr>gv=gv")
 
 -- Wrapping selection
+map('n', '<leader>w{', 'viwc{}<esc>P')
+map('n', '<leader>w[', 'viwc[]<esc>P')
+map('n', '<leader>w(', 'viwc()<esc>P')
+map('n', "<leader>w'", "viwc''<esc>P")
 map('v', '<leader>w{', 'c{}<esc>P')
 map('v', '<leader>w[', 'c[]<esc>P')
 map('v', '<leader>w(', 'c()<esc>P')
@@ -114,9 +118,9 @@ end, '[s]earch [n]eovim files')
 map('n', '<leader>ml', '<cmd>MarkdownPreview<cr>', '[m]arkdown [l]ive preview')
 map('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', '[m]arkdown preview [s]top')
 map('n', '<leader>mL', '<cmd>MarkdownPreviewToggle<cr>', '[m]arkdown [L]ive preview toggle')
-map('n', '<leader>mp', '<cmd>RenderMarkdown enable', '[m]arkdown [p]review')
-map('n', '<leader>md', '<cmd>RenderMarkdown disable', '[m]arkdown [d]isable preview')
-map('n', '<leader>mt', '<cmd>RenderMarkdown toggle', '[m]arkdown [t]oggle preview')
+map('n', '<leader>mp', '<cmd>RenderMarkdown enable<cr>', '[m]arkdown [p]review')
+map('n', '<leader>md', '<cmd>RenderMarkdown disable<cr>', '[m]arkdown [d]isable preview')
+map('n', '<leader>mt', '<cmd>RenderMarkdown toggle<cr>', '[m]arkdown [t]oggle preview')
 
 -- Folding
 map('n', '<leader>fc', function()
