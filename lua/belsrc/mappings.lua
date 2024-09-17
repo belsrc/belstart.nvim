@@ -59,6 +59,7 @@ map('n', '<leader>Ss', '<cmd>SessionSave<cr>', '[S]ession [s]ave')
 -- Explorer
 map('n', '<leader>pv', vim.cmd.Ex, '[p]roject [v]iew')
 map('n', '<leader>po', '<cmd>Oil<cr>', '[p]roject [o]il view')
+map('n', '<leader>py', '<cmd>Yazi<cr>', '[p]roject [y]azi view')
 
 -- Restarts
 map('n', '<leader>rl', '<cmd>LspRestart<cr>', 'Restart: [l]sp')
