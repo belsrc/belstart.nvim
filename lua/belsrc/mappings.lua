@@ -21,6 +21,13 @@ map('i', '<C-k>', '<Up>', 'Move Up')
 map('v', 'J', ":m '>+1<cr>gv=gv")
 map('v', 'K', ":m '<-2<cr>gv=gv")
 
+-- Don't yank on certain actions
+map('n', 'x', '"_x')
+map('n', 'X', '"_X')
+map('v', 'x', '"_x')
+map('v', 'X', '"_X')
+map('v', 'p', '"_dP')
+
 -- Wrapping selection
 map('n', '<leader>w{', 'viwc{}<esc>P')
 map('n', '<leader>w[', 'viwc[]<esc>P')
@@ -35,6 +42,13 @@ map('v', "<leader>w'", "c''<esc>P")
 map('n', '<C-d>', '<C-d>zz', 'Page down')
 map('n', '<C-u>', '<C-u>zz', 'Page up')
 map('n', 'G', 'Gzz', 'Last line')
+
+-- Open links
+if vim.fn.has 'macunix' == 1 then
+  map('n', 'gx', "<cmd>silent execute '!open ' . shellescape('<cWORD>')<CR>", 'Go to link')
+else
+  map('n', 'gx', "<cmd>silent execute '!xdg-open ' . shellescape('<cWORD>')<CR>", 'Go to link')
+end
 
 -- Buffers
 map('n', '<leader>bn', '<cmd>bnext<cr>', '[b]uffer [n]ext')
@@ -68,6 +82,7 @@ map('n', '<leader>rc', '<cmd>source %MYVIMRC<cr>', 'Restart: nvim [c]config')
 -- Code
 map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
 map('n', '<leader>cr', vim.lsp.buf.rename, 'LSP: [c]ode [r]ename')
+map('n', '<leader>ca', vim.lsp.buf.code_action, 'LSP: [c]ode [a]ction')
 
 map('n', '<leader>cd', function()
   require('neogen').generate()
