@@ -36,30 +36,30 @@ return {
     }
 
     -- Basic debugging keymaps, feel free to change to your liking!
-    vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
-    vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
-    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
-    vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
-    vim.keymap.set('n', '<leader>tp', dap.toggle_breakpoint, { desc = 'Debug: [t]oggle Break[p]oint' })
-    vim.keymap.set('n', '<leader>cB', function()
-      dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end, { desc = 'Debug: Set [c]ode [B]reakpoint' })
+    -- vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
+    -- vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
+    -- vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
+    -- vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
+    -- vim.keymap.set('n', '<leader>ct', dap.toggle_breakpoint, { desc = 'Debug: Toggle break[p]oint' })
+    -- vim.keymap.set('n', '<leader>cB', function()
+    --   dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+    -- end, { desc = 'Debug: Set code [B]reakpoint' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     dapui.setup {
-      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      icons = { expanded = '', collapsed = '', current_frame = '*' },
       controls = {
         icons = {
-          pause = '⏸',
-          play = '▶',
-          step_into = '⏎',
-          step_over = '⏭',
-          step_out = '⏮',
-          step_back = 'b',
-          run_last = '▶▶',
-          terminate = '⏹',
-          disconnect = '⏏',
+          disconnect = ' ',
+          pause = ' ',
+          play = ' ',
+          run_last = ' ',
+          step_back = ' ',
+          step_into = ' ',
+          step_out = ' ',
+          step_over = ' ',
+          terminate = ' ',
         },
       },
     }

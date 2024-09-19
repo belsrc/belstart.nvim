@@ -8,7 +8,7 @@ local map = function(mode, keys, func, desc)
 end
 
 -- Clear highlight on search when pressing <Esc> in normal mode
-map('n', '<Esc>', '<cmd>nohlsearch<cr>')
+map('n', '<Esc>', '<cmd>nohlsearch<cr>', 'Cancel')
 
 -- Insert Moving
 map('i', '<C-e>', '<End>', 'Move End of Line')
@@ -29,21 +29,23 @@ map('v', 'X', '"_X')
 map('v', 'p', '"_dP')
 
 -- Wrapping selection
-map('n', '<leader>w{', 'viwc{}<esc>P')
-map('n', '<leader>w[', 'viwc[]<esc>P')
-map('n', '<leader>w(', 'viwc()<esc>P')
-map('n', "<leader>w'", "viwc''<esc>P")
-map('v', '<leader>w{', 'c{}<esc>P')
-map('v', '<leader>w[', 'c[]<esc>P')
-map('v', '<leader>w(', 'c()<esc>P')
-map('v', "<leader>w'", "c''<esc>P")
+map('n', '<leader>w{', 'viwc{}<esc>P', 'Wrap: Word with {}')
+map('n', '<leader>w[', 'viwc[]<esc>P', 'Wrap: Word with []')
+map('n', '<leader>w(', 'viwc()<esc>P', 'Wrap: Word with ()')
+map('n', "<leader>w'", "viwc''<esc>P", "Wrap: Word with ''")
+map('v', '<leader>w{', 'c{}<esc>P', 'Wrap: With {}')
+map('v', '<leader>w[', 'c[]<esc>P', 'Wrap: With []')
+map('v', '<leader>w(', 'c()<esc>P', 'Wrap: With ()')
+map('v', "<leader>w'", "c''<esc>P", "Wrap: With ''")
 
 -- Keep cursor in the middle of screen when half jumping
 map('n', '<C-d>', '<C-d>zz', 'Page down')
 map('n', '<C-u>', '<C-u>zz', 'Page up')
 map('n', 'G', 'Gzz', 'Last line')
 
--- Open links
+-- Go to
+map('n', 'gD', vim.lsp.buf.declaration, 'LSP: Go to [D]eclaration')
+
 if vim.fn.has 'macunix' == 1 then
   map('n', 'gx', "<cmd>silent execute '!open ' . shellescape('<cWORD>')<CR>", 'Go to link')
 else
@@ -51,118 +53,147 @@ else
 end
 
 -- Buffers
-map('n', '<leader>bn', '<cmd>bnext<cr>', '[b]uffer [n]ext')
-map('n', '<leader>bp', '<cmd>bprevious<cr>', '[b]uffer [p]revious')
-map('n', '<leader>bf', '<cmd>bfirst<cr>', '[b]uffer [f]irst')
-map('n', '<leader>bL', '<cmd>blast<cr>', '[b]uffer [L]ast')
-map('n', '<leader>bd', '<cmd>bd<cr>', '[b]uffer [d]elete')
-map('n', '<leader>bl', '<cmd>ls<cr>', '[b]uffer [l]ist')
-map('n', '<leader>bN', '<cmd>enew<cr>', '[b]uffer [N]ew')
-map('n', '<leader>bw', '<cmd>bwipeout!<cr>', '[b]uffer [w]ipeout')
+map('n', '<leader>bn', '<cmd>bnext<cr>', 'Buffer: [n]ext')
+map('n', '<leader>bp', '<cmd>bprevious<cr>', 'Buffer: [p]revious')
+map('n', '<leader>bf', '<cmd>bfirst<cr>', 'Buffer: [f]irst')
+map('n', '<leader>bL', '<cmd>blast<cr>', 'Buffer: [L]ast')
+map('n', '<leader>bd', '<cmd>bd<cr>', 'Buffer: [d]elete')
+map('n', '<leader>bl', '<cmd>ls<cr>', 'Buffer: [l]ist')
+map('n', '<leader>bN', '<cmd>enew<cr>', 'Buffer: [N]ew')
+map('n', '<leader>bw', '<cmd>bwipeout!<cr>', 'Buffer: [w]ipeout')
 
 -- Windows
-map('n', '<C-h>', '<C-w><C-h>', 'Move focus to the left window')
-map('n', '<C-l>', '<C-w><C-l>', 'Move focus to the right window')
-map('n', '<C-j>', '<C-w><C-j>', 'Move focus to the lower window')
-map('n', '<C-k>', '<C-w><C-k>', 'Move focus to the upper window')
+map('n', '<C-h>', '<C-w><C-h>', 'Window: Move to left window')
+map('n', '<C-l>', '<C-w><C-l>', 'Window: Move to right window')
+map('n', '<C-j>', '<C-w><C-j>', 'Window: Move to lower window')
+map('n', '<C-k>', '<C-w><C-k>', 'Window: Move to upper window')
 
 -- Sessions
-map('n', '<leader>Sr', '<cmd>SessionRestore<cr>', '[S]ession [r]estore')
-map('n', '<leader>Ss', '<cmd>SessionSave<cr>', '[S]ession [s]ave')
+map('n', '<leader>Sr', '<cmd>SessionRestore<cr>', 'Session: [r]estore')
+map('n', '<leader>Ss', '<cmd>SessionSave<cr>', 'Session: [s]ave')
 
 -- Explorer
-map('n', '<leader>pv', vim.cmd.Ex, '[p]roject [v]iew')
-map('n', '<leader>po', '<cmd>Oil<cr>', '[p]roject [o]il view')
-map('n', '<leader>py', '<cmd>Yazi<cr>', '[p]roject [y]azi view')
+map('n', '<leader>pn', vim.cmd.Ex, 'Project: [n]etrw')
+map('n', '<leader>po', '<cmd>Oil<cr>', 'Project: [o]il')
+map('n', '<leader>py', '<cmd>Yazi<cr>', 'Project: [y]azi')
 
 -- Restarts
 map('n', '<leader>rl', '<cmd>LspRestart<cr>', 'Restart: [l]sp')
-map('n', '<leader>rc', '<cmd>source %MYVIMRC<cr>', 'Restart: nvim [c]config')
+map('n', '<leader>rc', '<cmd>source %MYVIMRC<cr>', 'Restart: Neovim [c]config')
 
 -- Code
-map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [c]ode [f]ormat')
-map('n', '<leader>cr', vim.lsp.buf.rename, 'LSP: [c]ode [r]ename')
-map('n', '<leader>ca', vim.lsp.buf.code_action, 'LSP: [c]ode [a]ction')
+map('n', '<leader>cf', vim.lsp.buf.format, 'LSP: [f]ormat buffer')
+map('n', '<leader>cr', vim.lsp.buf.rename, 'LSP: [r]ename symbol')
+map('n', '<leader>ca', vim.lsp.buf.code_action, 'LSP: [a]ctions')
 
 map('n', '<leader>cd', function()
   require('neogen').generate()
 end, '[c]ode [d]oc Comment')
 
--- Git
-map('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Git: [b]lame (toggle)')
-map('n', '<leader>gD', '<cmd>Gitsigns toggle_deleted<cr>', 'Git: [D]eleted (toggle)')
+-- Display
+map('n', '<leader>H', vim.lsp.buf.hover, 'LSP: [H]over Documentation')
+map('n', '<leader>G', vim.lsp.buf.signature_help, 'LSP: Show Si[G]nature')
 
 -- Diagnostic keymaps
-map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous [d]iagnostic message')
-map('n', ']d', vim.diagnostic.goto_next, 'Go to next [d]iagnostic message')
-map('n', '<leader>ee', vim.diagnostic.open_float, 'Show diagnostic [e]rror messages')
-map('n', '<leader>eq', vim.diagnostic.setloclist, 'Open diagnostic [q]uickfix list')
+map('n', '[d', vim.diagnostic.goto_prev, 'Diagnostics: Go to previous message')
+map('n', ']d', vim.diagnostic.goto_next, 'Diagnostics: Go to next message')
+map('n', '<leader>ee', vim.diagnostic.open_float, 'Diagnostics: Show [e]rror messages')
+map('n', '<leader>eq', vim.diagnostic.setloclist, 'Diagnostics: Open [q]uickfix list')
 
 map('n', '<leader>en', function()
   require('trouble').next { mode = 'diagnostics', jump = true, skip_groups = true }
-end, 'Trouble: Jump to [n]ext issue')
+end, 'Diagnostics: Jump to [n]ext issue')
 
 map('n', '<leader>ep', function()
   require('trouble').prev { mode = 'diagnostics', jump = true, skip_groups = true }
-end, 'Trouble: Jump to [p]revious issue')
+end, 'Diagnostics: Jump to [p]revious issue')
+
+-- Debugging
+map('n', '<F5>', function()
+  require('dap').continue()
+end, 'Debug: Start/Continue')
+
+map('n', '<F1>', function()
+  require('dap').step_into()
+end, 'Debug: Step Into')
+
+map('n', '<F2>', function()
+  require('dap').step_over()
+end, 'Debug: Step Over')
+
+map('n', '<F3>', function()
+  require('dap').step_out()
+end, 'Debug: Step Out')
+
+map('n', '<leader>ct', function()
+  require('dap').toggle_breakpoint()
+end, 'Debug: Toggle break[p]oint')
+
+map('n', '<leader>cB', function()
+  require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+end, 'Debug: Set code [B]reakpoint')
+
+-- Git
+map('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Git: Toggle [b]lame')
+map('n', '<leader>gD', '<cmd>Gitsigns toggle_deleted<cr>', 'Git: Toggle [D]eleted')
 
 -- Search
-map('n', '<leader>sh', '<cmd>Telescope help_tags<cr>', '[s]earch [h]elp')
-map('n', '<leader>sk', '<cmd>Telescope keymaps<cr>', '[s]earch [k]eymaps')
-map('n', '<leader>sf', '<cmd>Telescope find_files<cr>', '[s]earch [f]iles')
-map('n', '<leader>ss', '<cmd>Telescope builtin<cr>', '[s]earch [s]elect Telescope')
-map('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', '[s]earch current [w]ord')
-map('n', '<leader>sg', '<cmd>Telescope live_grep<cr>', '[s]earch by [g]rep')
-map('n', '<leader>sd', '<cmd>Telescope diagnostics<cr>', '[s]earch [d]iagnostics')
-map('n', '<leader>sr', '<cmd>Telescope resume<cr>', '[s]earch [r]esume')
-map('n', '<leader>s.', '<cmd>Telescope oldfiles<cr>', '[s]earch Recent Files ("." for repeat)')
-map('n', '<leader><leader>', '<cmd>Telescope buffers<cr>', '[ ] Find existing buffers')
+map('n', '<leader>sh', '<cmd>Telescope help_tags<cr>', 'Search: [h]elp')
+map('n', '<leader>sk', '<cmd>Telescope keymaps<cr>', 'Search: [k]eymaps')
+map('n', '<leader>sf', '<cmd>Telescope find_files<cr>', 'Search: [f]iles')
+map('n', '<leader>ss', '<cmd>Telescope builtin<cr>', 'Search: [s]elect Telescope')
+map('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', 'Search: current [w]ord')
+map('n', '<leader>sg', '<cmd>Telescope live_grep<cr>', 'Search: With [g]rep')
+map('n', '<leader>sd', '<cmd>Telescope diagnostics<cr>', 'Search: [d]iagnostics')
+map('n', '<leader>sr', '<cmd>Telescope resume<cr>', 'Search: [r]esume')
+map('n', '<leader>s.', '<cmd>Telescope oldfiles<cr>', 'Search: Recent Files ("." for repeat)')
+map('n', '<leader><leader>', '<cmd>Telescope buffers<cr>', 'Search: Existing buffers')
 
 map('n', '<leader>s/', function()
   require('telescope.builtin').live_grep { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }
-end, '[s]earch [/] in Open Files')
+end, 'Search: In open buffers')
 
 map('n', '<leader>/', function()
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false })
-end, '[/] Fuzzily search in current buffer')
+end, 'Search: Fuzzily in current buffer')
 
 map('n', '<leader>sn', function()
   require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
-end, '[s]earch [n]eovim files')
+end, 'Search: [n]eovim files')
 
 -- Markdown
-map('n', '<leader>ml', '<cmd>MarkdownPreview<cr>', '[m]arkdown [l]ive preview')
-map('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', '[m]arkdown preview [s]top')
-map('n', '<leader>mL', '<cmd>MarkdownPreviewToggle<cr>', '[m]arkdown [L]ive preview toggle')
-map('n', '<leader>mp', '<cmd>RenderMarkdown enable<cr>', '[m]arkdown [p]review')
-map('n', '<leader>md', '<cmd>RenderMarkdown disable<cr>', '[m]arkdown [d]isable preview')
-map('n', '<leader>mt', '<cmd>RenderMarkdown toggle<cr>', '[m]arkdown [t]oggle preview')
+map('n', '<leader>ml', '<cmd>MarkdownPreview<cr>', 'Markdown: [l]ive preview')
+map('n', '<leader>ms', '<cmd>MarkdownPreviewStop<cr>', 'Markdown: Preview [s]top')
+map('n', '<leader>mL', '<cmd>MarkdownPreviewToggle<cr>', 'Markdown: [L]ive preview toggle')
+map('n', '<leader>mp', '<cmd>RenderMarkdown enable<cr>', 'Markdown: [p]review')
+map('n', '<leader>md', '<cmd>RenderMarkdown disable<cr>', 'Markdown: [d]isable preview')
+map('n', '<leader>mt', '<cmd>RenderMarkdown toggle<cr>', 'Markdown: [t]oggle preview')
 
 -- Folding
 map('n', '<leader>fc', function()
   require('ufo').closeAllFolds()
-end, '[f]old [c]lose all')
+end, 'Fold: [c]lose all')
 
 map('n', '<leader>fo', function()
   require('ufo').openAllFolds()
-end, '[f]old [o]pen all')
+end, 'Fold: [o]pen all')
 
 map('n', '<leader>fp', function()
   require('ufo').peekFoldedLinesUnderCursor()
-end, '[f]old [p]eek')
+end, 'Fold: [p]eek')
 
 map('n', '<leader>f1', function()
   require('ufo').closeFoldsWith(1)
-end, '[f]old level [1]')
+end, 'Fold: Level [1]')
 
 map('n', '<leader>f2', function()
   require('ufo').closeFoldsWith(2)
-end, '[f]old level [2]')
+end, 'Fold: Level [2]')
 
 map('n', '<leader>f3', function()
   require('ufo').closeFoldsWith(3)
-end, '[f]old level [3]')
+end, 'Fold: Level [3]')
 
 map('n', '<leader>f4', function()
   require('ufo').closeFoldsWith(4)
-end, '[f]old level [4]')
+end, 'Fold: Level [4]')

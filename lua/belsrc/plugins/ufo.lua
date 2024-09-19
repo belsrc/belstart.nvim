@@ -10,21 +10,21 @@ return {
       function()
         require('ufo').openAllFolds()
       end,
-      desc = 'Open all folds',
+      desc = 'Fold: Open all folds',
     },
     {
       'zM',
       function()
         require('ufo').closeAllFolds()
       end,
-      desc = 'Close all folds',
+      desc = 'Fold: Close all folds',
     },
     {
       'zZ',
       function()
         require('ufo').peekFoldedLinesUnderCursor()
       end,
-      desc = 'Peek folded lines under cursor',
+      desc = 'Fold: Peek folded lines under cursor',
     },
   },
   opts = {
