@@ -32,9 +32,9 @@ map('v', '<leader>w(', 'c()<esc>P')
 map('v', "<leader>w'", "c''<esc>P")
 
 -- Keep cursor in the middle of screen when half jumping
-map('n', '<C-d>', '<C-d>zz')
-map('n', '<C-u>', '<C-u>zz')
-map('n', 'G', 'Gzz')
+map('n', '<C-d>', '<C-d>zz', 'Page down')
+map('n', '<C-u>', '<C-u>zz', 'Page up')
+map('n', 'G', 'Gzz', 'Last line')
 
 -- Buffers
 map('n', '<leader>bn', '<cmd>bnext<cr>', '[b]uffer [n]ext')
