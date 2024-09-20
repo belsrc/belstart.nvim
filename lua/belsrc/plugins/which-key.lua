@@ -15,7 +15,7 @@ return {
       { '<leader>f', group = ' [f]olding' },
       { '<leader>g', group = ' [g]it' },
       { '<leader>m', group = ' [m]arkdown' },
-      { '<leader>p', group = ' [p]roject' },
+      { '<leader>p', group = '󰙅 [p]roject' },
       { '<leader>r', group = ' [r]estart' },
       { '<leader>s', group = ' [s]earch' },
       { '<leader>S', group = ' [S]ession' },
