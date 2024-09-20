@@ -42,6 +42,7 @@ return {
       dashboard.button('r', '   Recent', '<cmd>Telescope oldfiles<CR>'),
       dashboard.button('f', '󰥨   Find file', '<cmd>Telescope find_files<CR>'),
       dashboard.button('g', '󰱼   Find text', '<cmd>Telescope live_grep<CR>'),
+      dashboard.button('y', '   Open Yazi', '<cmd>Yazi<cr>'),
       dashboard.button('p', '   Projects', '<cmd>Telescope projects<CR>'),
       dashboard.button('c', '   Config', '<cmd>e $MYVIMRC <CR>'),
       dashboard.button('m', '󱌣   Mason', '<cmd>Mason<CR>'),
