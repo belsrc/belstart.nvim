@@ -1,3 +1,14 @@
+local function first(bufnr, ...)
+  local conform = require 'conform'
+  for i = 1, select('#', ...) do
+    local formatter = select(i, ...)
+    if conform.get_formatter_info(formatter, bufnr).available then
+      return formatter
+    end
+  end
+  return select(1, ...)
+end
+
 return {
   'stevearc/conform.nvim',
   lazy = false,
@@ -22,18 +33,27 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
-      --
-      -- You can use a sub-list to tell conform to run *until* a formatter
-      -- is found.
-      javascript = { { 'prettierd', 'prettier' }, 'eslintd' },
-      typescript = { { 'prettierd', 'prettier' }, 'eslintd' },
-      javascriptreact = { { 'prettierd', 'prettier' }, 'eslintd' },
-      typescriptreact = { { 'prettierd', 'prettier' }, 'eslintd' },
-      html = { { 'prettierd', 'prettier' } },
-      css = { { 'prettierd', 'prettier' } },
-      json = { { 'prettierd', 'prettier' } },
+      javascript = function(bufnr)
+        return { first(bufnr, 'biome', 'prettierd', 'prettier'), first(bufnr, 'biome', 'eslintd') }
+      end,
+      typescript = function(bufnr)
+        return { first(bufnr, 'biome', 'prettierd', 'prettier'), first(bufnr, 'biome', 'eslintd') }
+      end,
+      javascriptreact = function(bufnr)
+        return { first(bufnr, 'biome', 'prettierd', 'prettier'), first(bufnr, 'biome', 'eslintd') }
+      end,
+      typescriptreact = function(bufnr)
+        return { first(bufnr, 'biome', 'prettierd', 'prettier'), first(bufnr, 'biome', 'eslintd') }
+      end,
+      html = function(bufnr)
+        return { first(bufnr, 'biome', 'prettierd', 'prettier') }
+      end,
+      css = function(bufnr)
+        return { first(bufnr, 'biome', 'prettierd', 'prettier') }
+      end,
+      json = function(bufnr)
+        return { first(bufnr, 'biome', 'prettierd', 'prettier') }
+      end,
       yaml = { { 'prettierd', 'prettier' } },
       markdown = { { 'prettierd', 'prettier' } },
     },

@@ -7,11 +7,11 @@ return {
 
       lint.linters_by_ft = lint.linters_by_ft or {}
       lint.linters_by_ft['markdown'] = { 'markdownlint' }
-      lint.linters_by_ft['javascript'] = { 'eslint_d' }
-      lint.linters_by_ft['typescript'] = { 'eslint_d' }
-      lint.linters_by_ft['javascriptreact'] = { 'eslint_d' }
-      lint.linters_by_ft['typescriptreact'] = { 'eslint_d' }
-      lint.linters_by_ft['json'] = { 'eslint_d' }
+      lint.linters_by_ft['javascript'] = { 'biomejs', 'eslint_d' }
+      lint.linters_by_ft['typescript'] = { 'biomejs', 'eslint_d' }
+      lint.linters_by_ft['javascriptreact'] = { 'biomejs', 'eslint_d' }
+      lint.linters_by_ft['typescriptreact'] = { 'biomejs', 'eslint_d' }
+      lint.linters_by_ft['json'] = { 'biomejs', 'eslint_d' }
       lint.linters_by_ft['glsl'] = { 'glslc' }
       lint.linters_by_ft['html'] = { 'htmlhint' }
 
