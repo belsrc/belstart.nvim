@@ -1,9 +1,9 @@
 local function running_linters()
   local linters = require('lint').get_running()
   if #linters == 0 then
-    return '󰦕 '
+    return '󰦕 Complete'
   end
-  return '󱉶 ' .. table.concat(linters, ', ')
+  return ' ' .. table.concat(linters, ', ')
 end
 
 return {
