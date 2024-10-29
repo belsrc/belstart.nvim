@@ -1,13 +1,15 @@
-local function first(bufnr, ...)
-  local conform = require 'conform'
-  for i = 1, select('#', ...) do
-    local formatter = select(i, ...)
-    if conform.get_formatter_info(formatter, bufnr).available then
-      return formatter
-    end
-  end
-  return select(1, ...)
-end
+-- Not a bad thing to move to a util ?
+--
+-- local function first(bufnr, ...)
+--   local conform = require 'conform'
+--   for i = 1, select('#', ...) do
+--     local formatter = select(i, ...)
+--     if conform.get_formatter_info(formatter, bufnr).available then
+--       return formatter
+--     end
+--   end
+--   return select(1, ...)
+-- end
 
 return {
   'stevearc/conform.nvim',
@@ -32,30 +34,28 @@ return {
       }
     end,
     formatters_by_ft = {
+      -- Biome set
+      -- javascript = { 'biome' },
+      -- typescript = { 'biome' },
+      -- javascriptreact = { 'biome' },
+      -- typescriptreact = { 'biome' },
+      -- html = { 'biome' },
+      -- css = { 'biome' },
+      -- json = { 'biome' },
+
+      -- ESlint set
+      javascript = { 'prettierd', 'eslint_d' },
+      typescript = { 'prettierd', 'eslint_d' },
+      javascriptreact = { 'prettierd', 'eslint_d' },
+      typescriptreact = { 'prettierd', 'eslint_d' },
+      html = { 'prettierd' },
+      css = { 'prettierd' },
+      json = { 'prettierd' },
+
+      -- Others
+      yaml = { 'prettierd' },
+      markdown = { 'prettierd' },
       lua = { 'stylua' },
-      javascript = function(bufnr)
-        return { first(bufnr, 'biome', 'prettierd', 'prettier'), first(bufnr, 'biome', 'eslintd') }
-      end,
-      typescript = function(bufnr)
-        return { first(bufnr, 'biome', 'prettierd', 'prettier'), first(bufnr, 'biome', 'eslintd') }
-      end,
-      javascriptreact = function(bufnr)
-        return { first(bufnr, 'biome', 'prettierd', 'prettier'), first(bufnr, 'biome', 'eslintd') }
-      end,
-      typescriptreact = function(bufnr)
-        return { first(bufnr, 'biome', 'prettierd', 'prettier'), first(bufnr, 'biome', 'eslintd') }
-      end,
-      html = function(bufnr)
-        return { first(bufnr, 'biome', 'prettierd', 'prettier') }
-      end,
-      css = function(bufnr)
-        return { first(bufnr, 'biome', 'prettierd', 'prettier') }
-      end,
-      json = function(bufnr)
-        return { first(bufnr, 'biome', 'prettierd', 'prettier') }
-      end,
-      yaml = { { 'prettierd', 'prettier' } },
-      markdown = { { 'prettierd', 'prettier' } },
     },
   },
 }
