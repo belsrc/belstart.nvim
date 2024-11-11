@@ -76,7 +76,6 @@ map('n', '<leader>Ss', '<cmd>SessionSave<cr>', 'Session: [s]ave')
 
 -- Explorer
 map('n', '<leader>pn', vim.cmd.Ex, 'Project: [n]etrw')
-map('n', '<leader>po', '<cmd>Oil<cr>', 'Project: [o]il')
 map('n', '<leader>py', '<cmd>Yazi<cr>', 'Project: [y]azi')
 
 -- Restarts
