@@ -3,6 +3,8 @@ local function file_exists(name)
   return vim.fn.filereadable(vim.fn.getcwd() .. '/' .. name) == 1
 end
 
+vim.notify = require("notify")
+
 -- Autocommand to set up linters based on the presence of config files
 local lint = require 'lint'
 vim.api.nvim_create_autocmd({ 'BufEnter', 'DirChanged' }, {

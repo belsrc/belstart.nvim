@@ -1,3 +1,6 @@
 return {
-  'rcarriga/nvim-notify'
+  'rcarriga/nvim-notify',
+  opts = {
+    render = 'wrapped-compact'
+  }
 }
