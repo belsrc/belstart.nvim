@@ -1,7 +1,3 @@
--- Some of these were already in kickstart.
--- Some were ripped from nvchad.
--- Some were ripped from ThePrimeagen.
--- Some are me not know wtf nvims normal keybinds are...
 
 local map = function(mode, keys, func, desc)
   vim.keymap.set(mode, keys, func, { desc = desc })
