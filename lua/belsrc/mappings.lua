@@ -30,11 +30,13 @@ map('n', '<leader>w[', 'viwc[]<esc>P', 'Wrap: Word with []')
 map('n', '<leader>w(', 'viwc()<esc>P', 'Wrap: Word with ()')
 map('n', "<leader>w'", "viwc''<esc>P", "Wrap: Word with ''")
 map('n', '<leader>w"', 'viwc""<esc>P', 'Wrap: Word with ""')
+map('n', '<leader>w`', 'viwc``<esc>P', 'Wrap: Word with ``')
 map('v', '<leader>w{', 'c{}<esc>P', 'Wrap: With {}')
 map('v', '<leader>w[', 'c[]<esc>P', 'Wrap: With []')
 map('v', '<leader>w(', 'c()<esc>P', 'Wrap: With ()')
 map('v', "<leader>w'", "c''<esc>P", "Wrap: With ''")
 map('v', '<leader>w"', 'c""<esc>P', 'Wrap: With ""')
+map('v', '<leader>w`', 'c``<esc>P', 'Wrap: With ``')
 
 -- Keep cursor in the middle of screen when half jumping
 map('n', '<C-d>', '<C-d>zz', 'Page down')
