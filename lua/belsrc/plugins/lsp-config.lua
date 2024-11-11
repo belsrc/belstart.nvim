@@ -87,7 +87,7 @@ return {
       biome = {},
       eslint_d = {},
       prettierd = {},
-      tsserver = {},
+      ts_ls = {},
       html = {},
       jsonls = {},
       lua_ls = {

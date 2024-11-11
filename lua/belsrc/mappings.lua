@@ -99,7 +99,9 @@ map('n', '<leader>G', vim.lsp.buf.signature_help, 'LSP: Show Si[G]nature')
 map('n', '[d', vim.diagnostic.goto_prev, 'Diagnostics: Go to previous message')
 map('n', ']d', vim.diagnostic.goto_next, 'Diagnostics: Go to next message')
 map('n', '<leader>ee', vim.diagnostic.open_float, 'Diagnostics: Show [e]rror messages')
-map('n', '<leader>eq', vim.diagnostic.setloclist, 'Diagnostics: Open [q]uickfix list')
+map('n', '<leader>ex', vim.diagnostic.setloclist, 'Diagnostics: Open e[x]tra quickfix list')
+map('n', '<leader>et', '<cmd>Trouble todo toggle<CR>', 'Diagnostics: Open [t]odos list')
+map('n', '<leader>eq', '<cmd>Trouble diagnostics toggle<CR>', 'Diagnostics: Open [q]uickfix list')
 
 map('n', '<leader>en', function()
   require('trouble').next { mode = 'diagnostics', jump = true, skip_groups = true }
