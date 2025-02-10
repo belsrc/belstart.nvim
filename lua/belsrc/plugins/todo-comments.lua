@@ -10,6 +10,7 @@ return {
       info = { '#1FCDFF' },
       hint = { '#50E3C2' },
       success = { '#61D800' },
+      performance = { '#E040FB' },
     },
     keywords = {
       TODO = { color = 'warning', icon = ' ' },
@@ -18,6 +19,7 @@ return {
       REVIEW = { color = 'info', icon = ' ' },
       NOTE = { color = 'hint', icon = ' ', alt = { 'INFO' } },
       REMARK = { color = 'success', icon = ' ' },
+      PERF = { color = 'performance', icon = '󰓅' },
     },
   },
 }
