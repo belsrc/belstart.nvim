@@ -81,11 +81,13 @@ return {
 
     -- Enable the following language servers
     local servers = {
+      clangd = {},
       cssls = {},
       css_variables = {},
       cssmodules_ls = {},
       biome = {},
       eslint_d = {},
+      gopls = {},
       prettierd = {},
       ts_ls = {},
       html = {},

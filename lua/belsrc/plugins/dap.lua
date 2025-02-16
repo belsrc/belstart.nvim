@@ -17,7 +17,11 @@ return {
 
       -- https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
       ensure_installed = {
+        'cpptools',
         'delve',
+        'elixir-ls',
+        'go-debug-adapter',
+        'ocamlearlybird',
       },
     }
 

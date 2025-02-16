@@ -34,6 +34,8 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'DirChanged' }, {
 
     lint.linters_by_ft.glsl = { 'glslc' }
     lint.linters_by_ft.html = { 'htmlhint' }
+    lint.linters_by_ft.c = { 'cpplint' }
+    lint.linters_by_ft.cpp = { 'cpplint' }
   end,
 })
 
@@ -66,6 +68,8 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'DirChanged' }, {
     linters['yaml'] = { 'prettierd' }
     linters['markdown'] = { 'prettierd' }
     linters['lua'] = { 'stylua' }
+    linters['c'] = { 'clang-format' }
+    linters['cpp'] = { 'clang-format' }
 
     -- Reconfigure Conform with the detected linters
     conform.setup {
