@@ -106,6 +106,7 @@ return {
       rust_analyzer = {},
       glsl_analyzer = {},
       stylua = {},
+      zls = {},
     }
 
     require('mason').setup()
