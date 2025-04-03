@@ -91,13 +91,17 @@ map('n', '<leader>cd', function()
 end, '[c]ode [d]oc Comment')
 
 -- Display
-map('n', '<leader>H', vim.lsp.buf.hover, 'LSP: [H]over Documentation')
+-- map('n', '<leader>H', vim.lsp.buf.hover, 'LSP: [H]over Documntation')
+-- Needed extra options
+vim.keymap.set('n', '<leader>H', ':EagleWin<CR>', { noremap = true, silent = true, desc = 'LSP: [H]over Documntation' })
 map('n', '<leader>G', vim.lsp.buf.signature_help, 'LSP: Show Si[G]nature')
 
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, 'Diagnostics: Go to previous message')
 map('n', ']d', vim.diagnostic.goto_next, 'Diagnostics: Go to next message')
-map('n', '<leader>ee', vim.diagnostic.open_float, 'Diagnostics: Show [e]rror messages')
+-- map('n', '<leader>ee', vim.diagnostic.open_float, 'Diagnostics: Show [e]rror messages')
+-- Needed extra options
+vim.keymap.set('n', '<leader>ee', ':EagleWin<CR>', { noremap = true, silent = true, desc = 'Diagnostics: Show [e]rror messages' })
 map('n', '<leader>ex', vim.diagnostic.setloclist, 'Diagnostics: Open e[x]tra quickfix list')
 map('n', '<leader>et', '<cmd>Trouble todo toggle<CR>', 'Diagnostics: Open [t]odos list')
 map('n', '<leader>eq', '<cmd>Trouble diagnostics toggle<CR>', 'Diagnostics: Open [q]uickfix list')
