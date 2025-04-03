@@ -107,10 +107,12 @@ map('n', '<leader>et', '<cmd>Trouble todo toggle<CR>', 'Diagnostics: Open [t]odo
 map('n', '<leader>eq', '<cmd>Trouble diagnostics toggle<CR>', 'Diagnostics: Open [q]uickfix list')
 
 map('n', '<leader>en', function()
+  ---@diagnostic disable-next-line: missing-parameter, missing-fields
   require('trouble').next { mode = 'diagnostics', jump = true, skip_groups = true }
 end, 'Diagnostics: Jump to [n]ext issue')
 
 map('n', '<leader>ep', function()
+  ---@diagnostic disable-next-line: missing-parameter, missing-fields
   require('trouble').prev { mode = 'diagnostics', jump = true, skip_groups = true }
 end, 'Diagnostics: Jump to [p]revious issue')
 

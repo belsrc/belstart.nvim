@@ -1,5 +1,6 @@
 local opt = vim.opt
 local global = vim.g
+local diag = vim.diagnostic
 
 global.mapleader = ' '
 global.maplocalleader = ' '
@@ -96,3 +97,6 @@ opt.foldcolumn = '1'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
+
+-- Turn off inline diagnostics
+diag.config({virtual_text = false})
