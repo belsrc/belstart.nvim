@@ -5,4 +5,12 @@ return {
     vim.cmd.colorscheme 'onedark'
     vim.cmd.hi 'Comment gui=none'
   end,
+  opts = {
+    highlights = {
+      -- 40% darken of the base OneDark blue color: #61afef
+      -- Visual = { bg = '#0c4778' },
+      -- 30% darken of the base OneDark blue color: #61afef
+      Visual = { bg = '#1163a6' },
+    },
+  },
 }
