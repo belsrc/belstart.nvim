@@ -205,3 +205,5 @@ end, 'Fold: Level [3]')
 map('n', '<leader>f4', function()
   require('ufo').closeFoldsWith(4)
 end, 'Fold: Level [4]')
+
+map('n', '<leader>ft', 'za', 'Fold: Toggle at cursor')
