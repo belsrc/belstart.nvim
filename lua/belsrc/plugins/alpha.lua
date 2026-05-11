@@ -37,7 +37,7 @@ return {
 
     -- Set Menu
     dashboard.section.buttons.val = {
-      dashboard.button('SPC j', '   Restore Session', '<cmd>SessionRestore<cr>'),
+      dashboard.button('SPC j', '   Restore Session', '<cmd>AutoSession restore<CR>'),
       dashboard.button('e', '   New file', '<cmd>ene<CR>'),
       dashboard.button('r', '   Recent', '<cmd>Telescope oldfiles<CR>'),
       dashboard.button('f', '󰥨   Find file', '<cmd>Telescope find_files<CR>'),
