@@ -143,6 +143,7 @@ end, 'Debug: Set code [B]reakpoint')
 
 -- Git
 map('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Git: Toggle [b]lame')
+map('n', '<leader>gd', '<cmd>Gitsigns toggle_word_diff<cr>', 'Git: Toggle word [d]iffs')
 map('n', '<leader>gD', '<cmd>Gitsigns toggle_deleted<cr>', 'Git: Toggle [D]eleted')
 
 -- Search
